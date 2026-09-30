@@ -1,0 +1,78 @@
+/* 1. Elimina márgenes y paddings por defecto de la página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Quita los márgenes por defecto del h1 para que no empuje el header */
+h1 {
+    margin: 0;
+    padding: 15px 0; /* Espaciado interno en lugar de margen externo */
+}
+
+
+
+.header
+{
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 124, 146);
+    color: white;
+    text-align: center;
+	font-size: 25px;
+}
+
+.navegacion nav
+{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgb(255, 194, 242);
+}
+
+.menu
+{
+    width: 25%;
+    height: auto;
+    background-color: white;
+    color: palevioletred;
+    margin: 10px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+}
+
+.contenido_principal
+{
+	width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgb(255, 194, 242);
+	
+}
+
+.datos
+{
+	width: 50%;
+    height: auto;
+    background-color: white;
+    color: palevioletred;
+    margin: 10px;
+    text-align: center;
+    line-height: 180px;
+    font-size: 20px;
+}
+
+.footer
+{
+	width: 100%;
+    height: auto;
+	background-color: pink;
+	color: white;
+	text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+}
