@@ -5,45 +5,81 @@
 		<link rel="stylesheet" type="text/css" href="estilos.css">
 	</head>
 	<body>
-	<body>
 
 	  <!-- Elemento repetitivo global (Fuera de main) -->
-	  <header>
-		<div class="header" >
-			<h1>Smart room</h1>
-		</div>
+	  <header class="header">
+		 <h1>Smart room</h1>
 	  </header>
 	  
 	  <!-- Navegacion-->
        <div class="navegacion">
             <nav>
                 <div class="menu">
-                <a href="/">Menu 1</a>
+                	<a href="index.html">Menu</a>
                 </div>
                 <div class="menu" >
-                <a href="/">Menu 2</a>
+                	<a href="config.html">Configuración</a>
                 </div>
                 <div class="menu">
-                <a href="/">Menu 3</a>
+                	<a href="minombre.html">Registro</a>
                 </div>
 			 
-                <div class="menu" >
-                <a href="/">Información</a>
-                </div>
+                <aside class="menu" >
+                	<a href="#">Información</a>
+                </aside>
             </nav>
         </div>
 	  <!-- CONTENIDO ÚNICO Y PRINCIPAL DE ESTA PÁGINA -->
 	  <main>
-	  <div class="contenido_principal">
-		<div class = "datos">
-			<h1>Datos de la habitación </h1>
-			<p>Contenido específico de la habitación</p>
+		<div class="contenido_principal">
+			<section class = "datos1">
+				<h2><strong>Datos de la habitación</strong> </h2>
+				<ul>
+					<li>
+						<strong>Ubicación:</strong> Escuela Politécnica Superior UAH</li>
+						<a href="https://www.google.com/maps/place/Escuela+Polit%C3%A9cnica+Superior+-+UAH/@40.5130375,-3.3513025,574m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd424bfad3ecbbc1:0x667509a1add2eac7!8m2!3d40.5130335!4d-3.3487276!16s%2Fg%2F11b7q65hkr?entry=ttu&g_ep=EgoyMDI2MDkyOC4wIKXMDSoASAFQAw%3D%3D"><strong>Pinche aquí para ver la localización</strong></a>
+					</li>
+					<li><strong>Aula</strong> Laboratorio EL11 </li>
+					<li> 
+						<img src="https://i.ytimg.com/vi/KZGUDsHofbA/maxresdefault.jpg" width ="300px" height="200px">
+					</li>
+				</ul>
+				
+			</section>
+			<section class = "datos">
+				<h2><strong>Datos de los sensores</strong></h2>
+				<table border="1">
+					<thead>
+						<tr>
+						<th><strong>Sensor</strong></th>
+						<th><strong>Valor</strong></th>
+						</tr>
+					</thead>
+					<tbody class="tabla_sensor"></tbody>
+					 <tr>
+					   <td>Temperatura</td>
+					   <td>25°C</td>
+					 </tr>
+					 <tr>
+					   <td>Humedad</td>
+					   <td>43%</td>
+					 </tr>
+					 <tr>
+					   <td>Nivel de sonido</td>
+					   <td>60 dB</td>
+					 </tr>
+					 <tr>
+					   <td>Nivel de luz</td>
+					   <td>450 luxes</td>
+					 </tr>
+					 <tr>
+					   <td>Movimiento</td>
+					   <td>Activo</td>
+					 </tr>
+					</tbody>
+				</table>
+			</section>
 		</div>
-		<div class = "datos">
-			<h1>Datos de los sensores </h1>
-			<p>Contenido específico de los sensores</p>
-		</div>
-	  </div>
 	  </main>
 
 	  <!-- Elemento repetitivo global (Fuera de main) -->
