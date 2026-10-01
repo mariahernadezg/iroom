@@ -1,33 +1,99 @@
 <!DOCTYPE html>
 <html>
-    <head>  <meta charset="utf-8">   
-            <title>Smart room</title>
-            <link rel="stylesheet" type="text/css" href="style.css"
-    </head>
-    <body>
-        <header>
-            <div id="titulo" style="background-color: #C885FF;height:20%">
-                <h1>Título</h1>
-            </div>
-        </header>
-        <!--División dos columnas-->
-        <form>
-            <div class="contenedor">
-                <div class="columna">
-                    <h2>Datos habitación</h2>
-                    
-                </div>
-                <div class="columna">
-                    <h2>Datos sensores</h2>
-                    
-                </div>
+	<head> <meta charset="utf-8">
+		<title>Smart room</title>
+		<link rel="stylesheet" type="text/css" href="estilos.css">
+	</head>
+	<body>
+	<body>
 
+	  <!-- Elemento repetitivo global (Fuera de main) -->
+	  <header>
+		<div class="header" >
+			<h1>Smart room</h1>
+		</div>
+	  </header>
+	  
+	
+	  <!-- CONTENIDO ÚNICO Y PRINCIPAL DE ESTA PÁGINA -->
+       <script src="datos.js"></script>
+	  <form action="" method="get">
+	  <div class="contenido_principal">
+		<div class = "datos">
+            <div>
+                <label for="paises">País:</label>
+                <input list="paises" name="pais" id="pais">
+                <datalist id="paises">
+                    <option value="España">
+                    <option value="Italia">
+                    <option value="Polonia">
+                    <option value="Portugal">
+                    <option value="China">
+                </datalist>  
             </div>
-        </form>
+            <div>
+                <label for="ciudades">Ciudad:</label>
+                <input name="ciudad" type="text">  
+            </div>
+            <div>
+                <label for="localizacion">Coordenadas GPS:</label>
+                <input name="localizacion" type="url">   
+            </div>
+            <div>
+                <label for="foto-habitacion">Fotografía de la habitación:</label>
+                <input type="file" id="foto-habitacion" name="foto_habitacion" accept="image/*" >
+            </div>
+            <div>
+                <label for="contraseña">Contraseña:</label>
+                <input name="contraseña" type="password">
+            </div>
+            <button type="submit">Enviar</button>
+		</div>
 
+		<div class = "datos">
             
-        
+			<h3> Datos de los sensores</h3>
+            
 
-       
-    </body>
+			<p>Contenido específico de los sensores</p>
+            <label for="temp">Temperatura</label>
+                <input type="checkbox" name="sensores" value="Temperatura">
+            <br>
+
+            <label for="humedad">Humedad</label>
+                <input type="checkbox" name="sensores" value="Humedad">    
+            <br>
+
+            <label for="sonido">Nivel de sonido</label>
+                <input type="checkbox" name="sensores" value="Nivel de sonido">
+            <br>
+
+            <label for="mov">Movimiento</label>
+                <input type="checkbox" name="sensores" value="Movimiento">
+            <br>
+            <label for="tmax">Temperatura máxima: </label>
+                <input type="number" id="tmax" name="tmax"
+                        min="-20" max="45" step="0.5" required>
+            <br>
+            <label for="tmin">Temperatura mínima: </label>
+                <input type="number" id="tmin" name="tmin"
+                        min="-20" max="45" step="0.5"  required>
+            <br>
+
+            <label for="difTemp">Diferencia de temperatura:</label>
+                <output id="difTemp" name="difTemp" for="tmax tmin">
+        
+            </form>
+  
+		</div>
+        
+	  </div>
+    </form>
+
+	  <!-- Elemento repetitivo global (Fuera de main) -->
+	  <footer class="footer">
+		<a href="index.html">Inicio</a>
+	  </footer>
+
+	</body>
 </html>
