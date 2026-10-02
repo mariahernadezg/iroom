@@ -22,7 +22,7 @@
 		<div class = "datos">
             <div>
                 <label for="paises">País:</label>
-                <input list="paises" name="pais" id="pais">
+                <input list="paises" name="pais" id="pais" required>
                 <datalist id="paises">
                     <option value="España">
                     <option value="Italia">
@@ -33,21 +33,21 @@
             </div>
             <div>
                 <label for="ciudades">Ciudad:</label>
-                <input name="ciudad" type="text">  
+                <input name="ciudad" type="text" required>  
             </div>
             <div>
                 <label for="localizacion">Coordenadas GPS:</label>
-                <input name="localizacion" type="url">   
+                <input name="localizacion" type="url" required>   
             </div>
             <div>
                 <label for="foto-habitacion">Fotografía de la habitación:</label>
-                <input type="file" id="foto-habitacion" name="foto_habitacion" accept="image/*" >
+                <input type="file" id="foto-habitacion" name="foto_habitacion" accept="image/*" required >
             </div>
             <div>
                 <label for="contraseña">Contraseña:</label>
-                <input name="contraseña" type="password">
+                <input name="contraseña" type="password" required>
             </div>
-            <button type="submit">Enviar</button>
+            
 		</div>
 
 		<div class = "datos">
@@ -83,11 +83,14 @@
             <label for="difTemp">Diferencia de temperatura:</label>
                 <output id="difTemp" name="difTemp" for="tmax tmin">
         
-            </form>
-  
 		</div>
-        
 	  </div>
+      <div class="contenido_principal">
+        <div class="boton">
+            <button type="submit" class="btn">Enviar</button>
+        </div>
+      </div>
+
     </form>
 
 	  <!-- Elemento repetitivo global (Fuera de main) -->
