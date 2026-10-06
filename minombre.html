@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Registro</title>
+		<link rel="stylesheet" type="text/css" href="estilos.css">
+	</head>
+
+	<body>
+
+		<header class="header">
+			<h1>Registro</h1>
+		</header>
+
+		<!-- Navegación-->
+       <nav class="navegacion">
+            <div class="menu">
+                <a href="index.html">Inicio</a>
+            </div>
+            <div class="menu" >
+               	<a href="config.html">Configuración</a>
+            </div>
+            <div class="menu">
+               	<a href="minombre.html">Registro</a>
+            </div>
+			 
+            <aside class="menu" >
+               	<p id="mensaje">Hola: Bienvenido a Smart Room</p>
+            </aside>
+        </nav>
+
+		<main>
+			<form id="formulario_nombre" class="formulario_nombre">
+
+				<label for="fname">Introduzca su nombre:</label>
+
+				<input type="text" id="fname" name="fname" required>
+
+				<button type="submit" class="btn">Guardar nombre</button>
+
+			</form>
+
+			<p class="volver">
+				<a href="index.html">Volver al inicio</a>
+			</p>
+		</main>
+
+		<footer class="footer">
+			<p>Universidad de Alcalá</p>
+		</footer>
+
+
+		<script>
+
+			// Buscamos el campo donde se escribe el nombre
+			var nombre = document.getElementById("fname");
+
+			// Comprobamos si ya hay un nombre guardado
+			var nombreGuardado = localStorage.getItem("fname");
+
+			if (nombreGuardado && nombreGuardado !== "undefined") 
+			{ 
+				nombre.value = nombreGuardado; 
+				document.getElementById("mensaje").innerHTML = "Hola " + nombreGuardado + ": Bienvenido/a a Smart Room"; 
+			}
+
+			// Cuando se pulsa el botón de guardar
+			document.getElementById("formulario_nombre").onsubmit = function() 
+			{
+
+				// Guardamos el nombre escrito
+				localStorage.setItem("fname", nombre.value);
+
+				alert("Nombre guardado correctamente.");
+
+				// Volvemos a la página principal
+				window.location.href = "index.html";
+
+				return false;
+			}
+
+		</script>
+	
+	</body>
+</html>
