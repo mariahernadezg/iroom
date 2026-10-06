@@ -1,47 +1,75 @@
 /* 1. Elimina márgenes y paddings por defecto de la página */
+/*Global*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 /* 2. Quita los márgenes por defecto del h1 para que no empuje el header */
-h1 {
+
+h1 
+{
     margin: 0;
     padding: 15px 0; /* Espaciado interno en lugar de margen externo */
 }
 
+/*3. Aplicación general al cuerpo de la página*/
+body 
+{ 
+    font-family: Arial, sans-serif; 
+    background-color: white; 
+}
 
-
+/*Navegación con el tabulador (foco visible)*/
+a:focus,
+button:focus,
+input:focus
+{
+    outline: 3px solid #0F766E;
+    outline-offset: 2px;
+}
 .header
 {
     width: 100%;
     height: auto;
-    background-color: rgb(255, 124, 146);
+    background-color: #0F766E;
     color: white;
     text-align: center;
 	font-size: 25px;
 }
 
-.navegacion nav
+.navegacion
 {
     width: 100%;
     height: auto;
     display: flex;
     flex-wrap: nowrap;
-    background-color: rgb(255, 194, 242);
+    background-color: #14B8A6;
 }
-
+.navegacion a 
+{
+    background-color: white;
+    color: #164E63;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px;
+    margin: 5px;
+    text-align: center;
+    
+}
 .menu
 {
     width: 25%;
     height: auto;
     background-color: white;
-    color: palevioletred;
+    color: #164E63;
     margin: 10px;
     text-align: center;
     line-height: 60px;
     font-size: 20px;
+    border-radius: 10px; /*redondeamos los bordes de navegacion*/
 }
 
 .contenido_principal
@@ -50,29 +78,228 @@ h1 {
     height: auto;
     display: flex;
     flex-wrap: nowrap;
-    background-color: rgb(255, 194, 242);
+    background-color: #CCFBF1;
 	
 }
 
-.datos
+.datos_habitacion
 {
 	width: 50%;
     height: auto;
     background-color: white;
-    color: palevioletred;
+    color: #164E63;
+    margin: 10px;
+    text-align: left;
+	font-size:20px;
+    line-height: 60px;
+    padding-left: 80px;
+	padding-top:20px;
+    
+}
+.datos_habitacion h2
+{	
+	text-align: center;
+}
+
+.imagen
+{
+    width: 300px;
+    height: 200px;
+    display: block;
+    margin-left: 25%;
+	text-align: center;
+}
+.datos_sensor h2
+{
+    text-align: center;
+    margin-bottom: 60px;
+}
+.datos_sensor
+{
+	width: 50%;
+    height: auto;
+    background-color: white;
+    color: #164E63;
     margin: 10px;
     text-align: center;
-    line-height: 180px;
+    line-height: 30px;
     font-size: 20px;
+    padding: 30px;
+    padding-left: 30px;
 }
+/*Estilo de la tabla*/
+.tabla_sensor
+{
+    width: 80%;           
+    margin-left: auto;    
+    margin-right: auto;
+    border-collapse: collapse;
+}
+
+.tabla_sensor th 
+{
+    background-color: #14B8A6;
+    color: white;
+}
+
+.tabla_sensor th, .tabla_sensor td
+{
+    border: 1px solid #99F6E4;
+    padding: 10px;
+    text-align: center;
+}
+
 
 .footer
 {
 	width: 100%;
     height: auto;
-	background-color: pink;
-	color: white;
+    background-color: #0F766E;
+    color: white;
 	text-align: center;
     line-height: 50px;
     font-size: 20px;
+}
+
+/*Para archivo config.html*/
+.datos
+{
+	width: 50%;
+    height: auto;
+    background-color: white;
+    color: #164E63;
+    line-height: 3;
+    margin: 10px;
+    text-align: left;
+    border:1px solid rgb(255, 254, 254);
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.boton
+{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    line-height: 3;
+    margin: 10px;
+    text-align: center;
+    padding-left: 20px;
+    border:1px solid rgb(255, 254, 254);
+}
+.btn
+{
+    background-color: #14B8A6;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/*CSS utilizado para minombre.html*/
+.formulario_nombre
+{
+    width: 100%;
+    height: auto;
+    background-color: white;
+    color: #164E63;
+    line-height: 100px;
+    text-align: center;
+    margin: auto;
+
+}
+.volver {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.volver a {
+    color: #0F766E;
+    font-weight: bold;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+
+
+
+/* CONTENIDO SENSORES */
+.plano {
+    position: relative;
+    display: inline-block; /* Se ajusta exactamente al ancho de la imagen */
+    max-width: 100%;
+    margin-top: 10px;
+    border: 2px solid #999;
+}
+
+.imagen_plano {
+    display: block;
+    width: 100%;
+    max-height: 300px; /* Limita la altura de la imagen */
+    object-fit: contain;
+}
+
+.sensor {
+    position: absolute;
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Posiciones en % para que queden dentro de la imagen*/
+.temperatura {
+    top: 10%;
+    left: 10%;
+}
+
+.luz {
+    top: 10%;
+    right: 10%;
+}
+
+.sonido {
+    bottom: 10%;
+    left: 10%;
+}
+
+.movimiento {
+    bottom: 10%;
+    right: 10%;
+}
+
+/*Adaptación para pantallas pequeñas*/
+@media screen and (max-width: 768px)
+{
+    .contenido_principal
+    {
+        flex-direction: column;
+    }
+
+    .datos_habitacion
+    {
+        width: auto;
+    }
+
+    .datos_sensor
+    {
+        width: auto;
+    }
+    .navegacion
+    {
+        flex-wrap: wrap;
+    }
+
+    .menu
+    {
+        width: 45%;
+        margin: 5px auto;
+    }
+    .plano
+    {
+        height: 350px;
+    }
 }
