@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 	<head> <meta charset="utf-8">
 		<title>Smart room</title>
-		<link rel="stylesheet" type="text/css" href="estilos.css">
+		<link rel="stylesheet" type="text/css" href="./css/iroom.css">
 
-        <script language="javascript">
+        <script>
             document.addEventListener ('DOMContentLoaded', () => 
             {
                 const inputMin = document.getElementById('tmin'); //identifica los elementos por su id y se guardan como ctes
@@ -67,7 +67,7 @@
 	  <div class="contenido_principal">
 		<div class = "datos">
             <div>
-                <label for="paises">País:</label>
+                <label for="pais">País:</label>
                 <input list="paises" name="pais" id="pais" required>
                 <datalist id="paises">
                     <option value="España">
@@ -78,20 +78,20 @@
                 </datalist>  
             </div>
             <div>
-                <label for="ciudades">Ciudad:</label>
-                <input name="ciudad" type="text" required>  
+                <label for="ciudad">Ciudad:</label>
+                <input id="ciudad" name="ciudad" type="text" required>  
             </div>
             <div>
                 <label for="localizacion">Coordenadas GPS:</label>
-                <input name="localizacion" type="url" required>   
+                <input id = "localizacion" name="localizacion" type="url" required>   
             </div>
             <div>
                 <label for="foto-habitacion">Fotografía de la habitación:</label>
-                <input type="file" id="foto-habitacion" name="foto_habitacion" accept="image/*" required >
+                <input  id="foto-habitacion" name="foto_habitacion" type="file" accept="image/*" required >
             </div>
             <div>
                 <label for="contraseña">Contraseña:</label>
-                <input name="contraseña" type="password" required>
+                <input id="contraseña" name="contraseña" type="password" required>
             </div>
             
 		</div>
@@ -100,7 +100,7 @@
             
 			<h2> Datos de los sensores</h2>
                   <!-- COLUMNA DERECHA: PLANO DE LA HABITACIÓN -->
-       <section class="control">
+        <section class="control">
 			<h3>Plano de la habitación</h3>
 			<p class="explicacion">Configuración de los sensores:</p>
 
@@ -137,7 +137,7 @@
                 <output id="difTemp" name="difTemp" for="tmax tmin"></output>
         
 		</div>
-	  </div>
+	</div>
       <div class="contenido_principal">
         <div class="boton">
             <script src="datos.js"></script>
@@ -145,7 +145,7 @@
         </div>
       </div>
         
-    </div>
+    
 
     </form>
 
@@ -155,7 +155,7 @@
 		<p>Universidad de Alcalá</p>	 
 	  </footer>
       <!--Necesario para el registro, es decir para "minombre.html"-->
-		<script language="javascript">
+		<script>
 			var nombre = localStorage.getItem("fname");
 
 			if (nombre) 
