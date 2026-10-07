@@ -1,4 +1,4 @@
-#Proyecto Smart Room
+# Proyecto iroom
 
 Práctica de desarrollo web (CSS, HTML)
 
