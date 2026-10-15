@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head> <meta charset="utf-8">
+		<title>Smart room</title>
+		<link rel="stylesheet" type="text/css" href="./css/iroom.css">
+		<script src="script.js"></script>
+
+	</head>
+	<body>
+
+	  <!-- Encabezado -->
+	  <header class="header">
+		 <h1>Smart room</h1>
+	  </header>
+	  
+	  <!-- Navegación-->
+       <nav class="navegacion">
+            <div class="menu">
+                <a href="index.html">Inicio</a>
+            </div>
+            <div class="menu" >
+               	<a href="config.html">Configuración</a>
+            </div>
+            <div class="menu">
+               	<a href="minombre.html">Registro</a>
+            </div>
+			 
+            <aside class="menu" >
+               	<p id="mensaje">Hola: Bienvenido a Smart Room</p>
+            </aside>
+        </nav>
+        
+	  <!-- Contenido principal de esta página-->
+	  <main>
+		<div class="contenido_principal">
+			<!--Sección de datos de la habitación-->
+			<section class = "datos_habitacion">
+				<h2><strong>Datos de la habitación</strong></h2>
+				<ul>
+					<li>
+						<strong>Ubicación:</strong> Escuela Politécnica Superior UAH
+					</li>
+
+					<li>
+						<a href="https://www.google.com/maps/place/Escuela+Polit%C3%A9cnica+Superior+-+UAH/@40.5130375,-3.3513025,574m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd424bfad3ecbbc1:0x667509a1add2eac7!8m2!3d40.5130335!4d-3.3487276!16s%2Fg%2F11b7q65hkr?entry=ttu&g_ep=EgoyMDI2MDkyOC4wIKXMDSoASAFQAw%3D%3D"
+						target="_blank">
+							
+							<strong>Pinche aquí para ver la localización</strong>
+						</a>
+					</li>
+
+					<li>
+						<strong>Aula:</strong> Laboratorio EL11 
+					</li>
+				
+					<li>
+						<img src="https://i.ytimg.com/vi/KZGUDsHofbA/maxresdefault.jpg" alt="Escuela Politécnica Superior" class="imagen" >
+						<p class = "imagen"> Edificio de la EPS</p>
+					</li>
+				</ul>
+			
+			</section>
+			<!--Sección de datos de los sensores-->
+			<section class = "datos_sensor">
+				<h2><strong>Datos de los sensores</strong></h2>
+				<table class="tabla_sensor">
+					<thead>
+						<tr>
+							<th><strong>Sensor</strong></th>
+							<th><strong>Valor</strong></th>
+						</tr>
+					</thead>
+					<tbody>
+					 <tr>
+					   <td>Temperatura</td>
+					   <td>25°C</td>
+					 </tr>
+					 <tr>
+					   <td>Humedad</td>
+					   <td>43%</td>
+					 </tr>
+					 <tr>
+					   <td>Nivel de sonido</td>
+					   <td>60 dB</td>
+					 </tr>
+					 <tr>
+					   <td>Nivel de luz</td>
+					   <td>450 luxes</td>
+					 </tr>
+					 <tr>
+					   <td>Movimiento</td>
+					   <td>Activo</td>
+					 </tr>
+					</tbody>
+				</table>
+			</section>
+		</div>
+	  </main>
+
+	  <!--Pie de página -->
+	  <footer class="footer">
+		<p>Universidad de Alcalá</p>
+	  </footer>
+	<!--Necesario para el registro, es decir para "minombre.html"-->
+		<script>
+			var nombre = localStorage.getItem("fname");
+
+			if (nombre) 
+			{
+				document.getElementById("mensaje").innerHTML =
+					"Hola " + nombre + ": Bienvenido/a a Smart Room.";
+			}
+
+	  	</script>  
+	</body>
+</html>
