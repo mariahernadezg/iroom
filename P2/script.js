@@ -1,11 +1,12 @@
-const formulario = document.getElementById("pais");
+const formulario = document.getElementById("formulario");
 
 function val_pais(pais)
 {
-    var paises = ["España", "Italia", "Francia", "Alemania"];
-    for(i=0; i<len(paises); i++)
+    const paises = ["España", "Italia", "Polonia", "Portugal", "China"]; //Comprobación de si el país está en la lista
+    for(let i=0; i< paises.length; i++)
     {
-        if(pais=paises[i])
+        pais = pais.trim().toLowerCase();
+        if(pais==paises[i].trim().toLowerCase())
         {
             return true;
         }
@@ -16,7 +17,7 @@ function val_pais(pais)
 
 formulario.addEventListener("submit", function(event)
 {
-    const pais = document.getElementById("country").value.trim();
+    const pais = document.getElementById("pais").value;
 
     if (!val_pais(pais))
     {
@@ -24,3 +25,5 @@ formulario.addEventListener("submit", function(event)
         alert("Error: el país introducido no es válido.");
     }
 });
+
+
