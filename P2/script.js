@@ -1,4 +1,5 @@
-const formulario = document.getElementById("formulario");
+//Validación campo país
+const formulario = document.getElementById("formulario"); //porque se envían todos los campos del formulario a la vez
 
 function val_pais(pais)
 {
@@ -15,14 +16,36 @@ function val_pais(pais)
 }
 
 
-formulario.addEventListener("submit", function(event)
+
+//Ventana modal
+function mostrarModal(titulo, mensaje) 
 {
+    document.getElementById("error").textContent = titulo;
+    document.getElementById("mensajeModal").textContent = mensaje;
+    document.getElementById("modal").style.display = "block";
+}
+
+// Elementos de la ventana modal
+const modal = document.getElementById("modal");
+const cerrarMod = document.getElementById("cerrar_m");
+
+
+// Ocultar la ventana al cargar la página
+modal.style.display = "none";
+
+// Validar el formulario al enviarlo
+formulario.addEventListener("submit", function(event) {
     const pais = document.getElementById("pais").value;
 
-    if (!val_pais(pais))
-    {
+    if (!val_pais(pais)) {
         event.preventDefault();
-        alert("Error: el país introducido no es válido.");
+
+        // Mostrar la ventana modal
+        mostrarModal("País incorrecto", "Error: debe introducir un país de la lista.");
     }
 });
 
+// Cerrar la ventana al pulsar Aceptar
+cerrarMod.addEventListener("click", function() {
+    modal.style.display = "none";
+});
