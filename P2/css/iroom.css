@@ -303,3 +303,66 @@ input:focus
         height: 350px;
     }
 }
+/*Ventana modal*/
+
+/* Ventana modal */
+.modal {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    width: 500px;
+    max-width: 90%;
+    margin: 0 auto;
+
+    background-color: white;
+    color: #000000;
+    border: 3px solid #c9fbf1;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+
+    z-index: 9999;
+    
+}
+
+
+.hmodal {
+    background-color: #11766f;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+}
+
+
+
+.m-contenido {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 3px solid #c9fbf1;
+}
+
+
+.m-pie {
+    background-color: #f4fffc;
+    padding: 15px 20px;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Botón Aceptar */
+.m-button {
+    background-color: #11766f;
+    color: white;
+    border: 2px solid #0aaE9f;
+    border-radius: 7px;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-family: Georgia, serif;
+    cursor: pointer;
+}
+
+
