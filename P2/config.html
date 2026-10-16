@@ -81,19 +81,19 @@
             </div>
             <div>
                 <label for="ciudad">Ciudad:</label>
-                <input id="ciudad" name="ciudad" type="text" required>  
+                <input id="ciudad" name="ciudad" type="text" >  
             </div>
             <div>
                 <label for="localizacion">Coordenadas GPS:</label>
-                <input id = "localizacion" name="localizacion" type="url" required>   
+                <input id = "localizacion" name="localizacion" type="url" >   
             </div>
             <div>
                 <label for="foto-habitacion">Fotografía de la habitación:</label>
-                <input  id="foto-habitacion" name="foto_habitacion" type="file" accept="image/*" required >
+                <input  id="foto-habitacion" name="foto_habitacion" type="file" accept="image/*"  >
             </div>
             <div>
                 <label for="contraseña">Contraseña:</label>
-                <input id="contraseña" name="contraseña" type="password" required>
+                <input id="contraseña" name="contraseña" type="password" >
             </div>
             
 		</div>
@@ -128,11 +128,11 @@
             <br>
             <label for="tmax">Temperatura máxima: </label>
                 <input type="number" id="tmax" name="tmax"
-                        min="-20" max="45" step="0.5" required>
+                        min="-20" max="45" step="0.5" >
             <br>
             <label for="tmin">Temperatura mínima: </label>
                 <input type="number" id="tmin" name="tmin"
-                        min="-20" max="45" step="0.5"  required>
+                        min="-20" max="45" step="0.5"  >
             <br>
 
             <label for="difTemp">Diferencia de temperatura:</label>
@@ -147,10 +147,24 @@
         </div>
       </div>
         
-
+    
 
     </form>
+    <!--Ventana modal-->
 
+    <div class="modal", id="modal">
+        <div class="hmodal">
+            <h2 id = "error"></h2>
+        </div>
+
+        <div class="m-contenido">
+            <p id ="mensajeModal"></p>
+        </div>
+
+        <div class="m-pie">
+            <button type="button" class="m-button", id="cerrar_m">Aceptar</button>
+        </div>
+    </div>
 	  
 	  <footer class="footer">
 		<a href="index.html">Inicio</a>
