@@ -5,6 +5,7 @@
 		<meta charset="utf-8">
 		<title>Registro</title>
 		<link rel="stylesheet" type="text/css" href="./css/iroom.css">
+		<script src="nombre.js" defer></script>
 	</head>
 
 	<body>
@@ -33,11 +34,33 @@
 		<main>
 			<form id="formulario_nombre" class="formulario_nombre">
 
-				<label for="fname">Introduzca su nombre:</label>
+				<h2>Personalización de la página</h2>
 
-				<input type="text" id="fname" name="fname" required>
+				<!--Campo mi nombre-->
+				<div class = "campo">
+					<label for="fname">Introduzca su nombre:</label>
+            		<input type="text" id="fname" name="fname" required placeholder = "tunombre">
+            		<button type="submit" class="btn">
+                	Guardar nombre
+            		</button>
+        		</div>
 
-				<button type="submit" class="btn">Guardar nombre</button>
+				<!--Campo correo electrónico-->
+				<div class="campo">
+					<label for="correo">Introduzca su correo electrónico:</label>
+					<input type="email" id="correo" name="correo" placeholder = "usuario@domino.extensión">
+
+					<div class="acciones">
+						<button type="button" class="btn" id="btnJs">
+							Validar con JavaScript
+						</button>
+
+						<button type="button" class="btn" id="btnRegEx">
+							Validar con expresiones regulares
+						</button>
+            		</div>
+					<p id="emailError"> </p>
+				</div>
 
 			</form>
 
@@ -53,32 +76,7 @@
 
 		<script>
 
-			// Buscamos el campo donde se escribe el nombre
-			var nombre = document.getElementById("fname");
-
-			// Comprobamos si ya hay un nombre guardado
-			var nombreGuardado = localStorage.getItem("fname");
-
-			if (nombreGuardado && nombreGuardado !== "undefined") 
-			{ 
-				nombre.value = nombreGuardado; 
-				document.getElementById("mensaje").innerHTML = "Hola " + nombreGuardado + ": Bienvenido/a a Smart Room"; 
-			}
-
-			// Cuando se pulsa el botón de guardar
-			document.getElementById("formulario_nombre").onsubmit = function() 
-			{
-
-				// Guardamos el nombre escrito
-				localStorage.setItem("fname", nombre.value);
-
-				alert("Nombre guardado correctamente.");
-
-				// Volvemos a la página principal
-				window.location.href = "index.html";
-
-				return false;
-			}
+			
 
 		</script>
 	
