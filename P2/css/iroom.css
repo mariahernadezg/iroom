@@ -104,8 +104,8 @@ input:focus
 
 .imagen
 {
-    width: 300px;
-    height: 200px;
+    width: 450px;
+    height: 300px;
     display: block;
     margin-left: 25%;
 	text-align: center;
@@ -178,7 +178,7 @@ input:focus
 }
 .datos input
 {
-    width: 60%;
+    width: 50%;
     padding: 8px;
     font-size: 18px;
     border-color:rgba(76, 74, 74, 0.925); 
@@ -272,7 +272,7 @@ input:focus
 .imagen_plano {
     display: block;
     width: 100%;
-    max-height: 300px; /* Limita la altura de la imagen */
+    max-height: 350px; /* Limita la altura de la imagen */
     object-fit: contain;
 }
 
@@ -338,9 +338,125 @@ input:focus
         height: 350px;
     }
 }
-/*Ventana modal*/
 
-/* Ventana modal */
+
+.seguridad
+{
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 5px;
+    color: #164E63;
+}
+
+/*CLASES PARA LA CALCULADORA */
+.calculadora 
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 35px;
+    color:#095852;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    margin: 30px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 2px solid #095852;
+    border-radius: 12px;
+    background-color: #beece1;
+}
+
+
+
+/*Formato de pantalla*/
+
+.pantalla 
+{
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    padding: 15px;
+    font-size: 28px;
+    text-align: right;
+    border: 1px solid #23a195;
+    border-radius: 6px;
+    background-color: white;
+    margin-bottom: 15px;
+    color: #095852;
+    font-size: large;
+}
+
+/*Formato para selección de unidades*/
+.unidades 
+{
+    margin: 10px;
+    font-size: 25px;
+}
+
+
+
+/* BOTONERA */
+
+.botones 
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.btn
+{
+    min-height: 48px;
+    padding: 8px;
+    font-size: 17px;
+    color:#095852;
+    cursor: pointer;
+    border: 1px solid #23a195;
+    border-radius: 6px;
+    background-color: white;
+}
+
+
+
+
+
+
+/* PANTALLAS PEQUEÑAS */
+
+/* PANTALLAS PEQUEÑAS */
+
+@media (max-width: 480px)
+{
+    .calculadora
+    {
+        width: 95%;
+        padding: 12px;
+    }
+
+    .botones
+    {
+        gap: 5px;
+    }
+
+    .botones button
+    {
+        min-height: 44px;
+        padding: 5px;
+        font-size: 15px;
+    }
+
+    .unidades
+    {
+        font-size: 18px;
+    }
+
+    .unidades select
+    {
+        max-width: 100%;
+    }
+}
+
+
+/*VENTANA MODAL */
 .modal {
     display: flex;
     position: fixed;
@@ -401,4 +517,3 @@ input:focus
     font-family: Georgia, serif;
     cursor: pointer;
 }
-
