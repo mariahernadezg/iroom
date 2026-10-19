@@ -3,7 +3,7 @@
 	<head> <meta charset="utf-8">
 		<title>Configuración</title>
 		<link rel="stylesheet" type="text/css" href="./css/iroom.css">
-        <script src="script.js" defer></script>
+        <script src="formulario.js" defer></script>
 
 
         <script>
@@ -85,15 +85,20 @@
             </div>
             <div>
                 <label for="localizacion">Coordenadas GPS:</label>
-                <input id = "localizacion" name="localizacion" type="url" >   
+                <input id = "localizacion" name="localizacion" type="text">
+                <br>
+                <p>Generación de coordenadas:  </p>
+                <p id="coordenadasGPS"></p>   
             </div>
             <div>
                 <label for="foto-habitacion">Fotografía de la habitación:</label>
-                <input  id="foto-habitacion" name="foto_habitacion" type="file" accept="image/*"  >
+                <input  id="foto-habitacion" name="foto_habitacion" type="file" accept="image/*">
+                <br>
+                <p id="coordenadasGPS"></p>
             </div>
             <div>
                 <label for="contraseña">Contraseña:</label>
-                <input id="contraseña" name="contraseña" type="password" >
+                <input id="contraseña" name="contraseña" type="password">
             </div>
             
 		</div>
