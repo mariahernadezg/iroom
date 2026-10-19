@@ -176,6 +176,15 @@ input:focus
     font-size: 20px;
     padding-left: 20px;
 }
+.datos input
+{
+    width: 60%;
+    padding: 8px;
+    font-size: 18px;
+    border-color:rgba(76, 74, 74, 0.925); 
+    border-radius: 5px;
+    
+}
 
 .boton
 {
@@ -198,16 +207,39 @@ input:focus
 }
 
 /*CSS utilizado para minombre.html*/
-.formulario_nombre
+.formulario_nombre {
+    width: 100%;
+    margin: 30px auto;
+    padding: 25px;
+    color: #164E63;
+    text-align: left;
+    line-height: 1.5;
+}
+.formulario_nombre h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.campo label {
+    font-size: 20px;
+    font-weight: bold;
+}
+.campo input
 {
     width: 100%;
-    height: auto;
-    background-color: white;
-    color: #164E63;
-    line-height: 100px;
-    text-align: center;
-    margin: auto;
-
+    padding: 10px;
+    font-size: 18px;
+    border-color:rgba(76, 74, 74, 0.925); 
+    border-radius: 5px;
+    
 }
 .volver {
     text-align: center;
@@ -221,8 +253,11 @@ input:focus
     text-decoration: none;
     text-decoration: underline;
 }
-
-
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
 
 
 /* CONTENIDO SENSORES */
@@ -338,6 +373,8 @@ input:focus
 
 
 .m-contenido {
+    white-space: pre-line;
+    line-height: 1.5;
     background-color: white;
     padding: 20px;
     text-align: center;
@@ -364,5 +401,4 @@ input:focus
     font-family: Georgia, serif;
     cursor: pointer;
 }
-
 
