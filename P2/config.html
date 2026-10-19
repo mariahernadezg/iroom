@@ -57,7 +57,9 @@
             <div class="menu">
                	<a href="minombre.html">Registro</a>
             </div>
-			 
+			<div class="menu">
+               	<a href="calculadora.html">Calculadora</a>
+            </div>
             <aside class="menu" >
                	<p id="mensaje">Hola: Bienvenido a Smart Room</p>
             </aside>
@@ -70,7 +72,7 @@
 		<div class = "datos">
             <div>
                 <label for="pais">País:</label>
-                <input list="paises" name="pais" id="pais" required>
+                <input list="paises" name="pais" id="pais">
                 <datalist id="paises">
                     <option value="España">
                     <option value="Italia">
@@ -81,11 +83,11 @@
             </div>
             <div>
                 <label for="ciudad">Ciudad:</label>
-                <input id="ciudad" name="ciudad" type="text" >  
+                <input id="ciudad" name="ciudad" type="text" placeholder = "Alcalá de Henares">  
             </div>
             <div>
                 <label for="localizacion">Coordenadas GPS:</label>
-                <input id = "localizacion" name="localizacion" type="text">
+                <input id = "localizacion" name="localizacion" type="text" placeholder = "N 40º 30' 45.00&quot, O 3º 20' 54.00&quot">
                 <br>
                 <p>Generación de coordenadas:  </p>
                 <p id="coordenadasGPS"></p>   
@@ -99,6 +101,7 @@
             <div>
                 <label for="contraseña">Contraseña:</label>
                 <input id="contraseña" name="contraseña" type="password">
+                <p id="seguridad" class="seguridad"></p>
             </div>
             
 		</div>
@@ -139,7 +142,9 @@
                 <input type="number" id="tmin" name="tmin"
                         min="-20" max="45" step="0.5"  >
             <br>
-
+            <label for="tmin">Temperatura actual: </label>
+                <input type="number" id="tempAct" name="tempAct" step="any">
+            <br>
             <label for="difTemp">Diferencia de temperatura:</label>
                 <output id="difTemp" name="difTemp" for="tmax tmin"></output>
         
@@ -155,9 +160,10 @@
     
 
     </form>
+
     <!--Ventana modal-->
 
-    <div class="modal", id="modal">
+    <div class="modal" id="modal">
         <div class="hmodal">
             <h2 id = "error"></h2>
         </div>
@@ -167,7 +173,7 @@
         </div>
 
         <div class="m-pie">
-            <button type="button" class="m-button", id="cerrar_m">Aceptar</button>
+            <button type="button" class="m-button" id="cerrar_m">Aceptar</button>
         </div>
     </div>
 	  
