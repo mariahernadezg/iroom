@@ -89,27 +89,43 @@ contraseña.addEventListener("input", val_cont);
 
 function genEnlace(localizacion)
 {
+
     let coord;
     coord = localizacion.split(",");
     //Cordenadas latitud
     let lat;
     let latitud;
-    lat = coord[0].trim().split(/\s+/);;
+    lat = coord[0].trim();
+    if (/^[+-]?\d+(?:\.\d+)?$/.test(lat)) //si la latitud está en decimal
+    { 
+       latitud = parseFloat(lat);
+    }else
+    {
+        lat = lat.split(/\s+/);
+        latitud = coordDec(lat[0], parseFloat(lat[1]), parseFloat(lat[2]), parseFloat(lat[3]));
+    }
     
-    latitud = coordDec(lat[0], parseFloat(lat[1]), parseFloat(lat[2]), parseFloat(lat[3]));
 
     //Cordenadas longitud
     let long;
     let longitud;
-    long = coord[1].trim().split(/\s+/);;
-  
-    longitud = coordDec(long[0], parseFloat(long[1]), parseFloat(long[2]), parseFloat(long[3]));
+    long = coord[1].trim();
+    if (/^-?\d+(?:\.\d+)?$/.test(long)) //si la longitud está en decimal
+    { 
+       longitud = parseFloat(long);
+    }else
+    {
+        long = long.split(/\s+/);
+        longitud = coordDec(long[0], parseFloat(long[1]), parseFloat(long[2]), parseFloat(long[3]));
 
+
+    }
+    
     //Creación del enlace
     let enlace = "https://maps.google.com/maps?q=" + latitud + "," + longitud;
 
     document.getElementById("coordenadasGPS").innerHTML =
-        '<a href="' + enlace + '" target="_blank">Ver en Google Maps</a>';
+        '<a href="' + enlace + '" target="_blank">Enlace a Google Maps</a>';
 }
 
 function coordDec(coordenada, grados, min, seg)
