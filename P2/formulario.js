@@ -1,6 +1,6 @@
 //Validación campo país
 const formulario = document.getElementById("formulario"); //porque se envían todos los campos del formulario a la vez
-
+const pais = document.getElementById("pais");
 function val_pais(pais)
 {
     const paises = ["España", "Italia", "Polonia", "Portugal", "China"]; //Comprobación de si el país está en la lista
@@ -53,7 +53,7 @@ function val_temp()
 
 //VALIDACION CONTRASEÑA
 const contraseña = document.getElementById("contraseña");
-const seguridad = document.getElementById("seguridad");
+const seguridad = document.getElementById("seguridad"); 
 
 function val_cont()
 {
@@ -157,7 +157,7 @@ modal.style.display = "none";
 //Modal país
 formulario.addEventListener("submit", function(event) 
 {
-    const pais = document.getElementById("pais");
+    
     const long = contraseña.value.length;
     let errores = "";
     if (!val_pais(pais.value)) 
@@ -193,3 +193,6 @@ cerrarMod.addEventListener("click", function()
 {
     modal.style.display = "none";
 });
+
+
+

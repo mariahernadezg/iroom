@@ -199,6 +199,7 @@ input:focus
 }
 .btn
 {
+    width: auto;
     background-color: #14B8A6;
     color: rgb(0, 0, 0);
     font-size: 20px;
@@ -342,7 +343,7 @@ input:focus
 
 .seguridad
 {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.5;
     margin-top: 5px;
     color: #164E63;
@@ -352,7 +353,7 @@ input:focus
 .calculadora 
 {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 35px;
+    font-size: 33 px;
     color:#095852;
     text-align: center;
     width: 50%;
@@ -403,7 +404,7 @@ input:focus
     gap: 8px;
 }
 
-.btn
+.btn_calc
 {
     min-height: 48px;
     padding: 8px;
@@ -493,7 +494,7 @@ input:focus
     line-height: 1.5;
     background-color: white;
     padding: 20px;
-    text-align: center;
+    text-align: left;
     font-size: 18px;
     border-bottom: 3px solid #c9fbf1;
 }

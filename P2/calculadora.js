@@ -34,7 +34,7 @@ let a = "";
 let b = "";
 let result = "";
 //Para la conversión
-let udActual= "C";
+let udActual= udOrigen.value;
 
 //Mostrar el número con sus unidades
 function unidades(valor)
@@ -372,7 +372,7 @@ let temp= Number(n1); //Convertimos a número
 let origen = udActual;
 let destino = udDestino.value;
 
-//Suponemos que partimos de grados Celsius y transformamos a Celsius
+//Suponemos que partimos de grados Celsius 
 let celsius;
 
 if (origen === "C")
@@ -387,6 +387,14 @@ else if (origen === "K")
 {
     celsius = temp - 273.15;
 }
+//Comprobar que no sea inferior al cero absoluto
+if (celsius < -273.15)
+{
+    pantalla.textContent = "Temperatura inferior al cero absoluto";
+    error = true;
+    return;
+}
+
 //Conversión de Celsius a destino
 let result;
 let simbolo;
@@ -408,20 +416,6 @@ else if (destino === "K")
 }
 
 
-//Cambio de unidad de origen
-udOrigen.addEventListener("change", function()
-{
-    reiniciar();
-    pantalla.textContent = "";
-});
-//Comprobar que no sea inferior al cero absoluto
-if (celsius < -273.15)
-{
-    pantalla.textContent = "Temperatura inferior al cero absoluto";
-    error = true;
-    return;
-}
-
 //Guardamos el resultado y actualizar
 n1 = String(result);
 n2 = "";
@@ -433,3 +427,9 @@ pantalla.textContent = result + " " + simbolo;
 resultadoMostrado = true;
 });
 
+//Cambio de unidad de origen
+udOrigen.addEventListener("change", function()
+{
+    reiniciar();
+    pantalla.textContent = "";
+});

@@ -6,22 +6,22 @@ var nombreGuardado = localStorage.getItem("fname");
 if (nombreGuardado && nombreGuardado !== "undefined") 
 { 
     nombre.value = nombreGuardado; 
-	document.getElementById("mensaje").innerHTML = "Hola " + nombreGuardado + ": Bienvenido/a a Smart Room"; 
+    document.getElementById("mensaje").innerHTML = "Hola " + nombreGuardado + ": Bienvenido/a a Smart Room"; 
 }
 
 // Cuando se pulsa el botón de guardar
 document.getElementById("formulario_nombre").onsubmit = function() 
 {
 
-	// Guardamos el nombre escrito
-	localStorage.setItem("fname", nombre.value);
+    // Guardamos el nombre escrito
+    localStorage.setItem("fname", nombre.value);
 
-	alert("Nombre guardado correctamente.");
+    alert("Nombre guardado correctamente.");
 
-	// Volvemos a la página principal
-	window.location.href = "index.html";
+    // Volvemos a la página principal
+    window.location.href = "index.html";
 
-				return false;
+                return false;
 }
 
 //Validación correo electrónico
@@ -99,4 +99,3 @@ document.addEventListener("DOMContentLoaded", function () {
         
     });
 });
-
