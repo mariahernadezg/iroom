@@ -518,3 +518,53 @@ input:focus
     font-family: Georgia, serif;
     cursor: pointer;
 }
+
+/*PRÁCTICA3*/
+/*documento tabla.js*/
+
+/* CONTENEDOR DE LA TABLA */
+.principal_tabla
+{
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #CCFBF1;
+    padding: 40px 20px;
+}
+
+/* BOTONES DE PAGINACIÓN */
+.paginacion
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.boton_pag
+{
+    background-color: #0F766E;
+    color: white;
+    border: 2px solid #14B8A6;
+    border-radius: 7px;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* EFECTO AL PASAR EL RATÓN */
+.boton_pag:hover
+{
+    background-color: #14B8A6;
+    border-color: #0F766E;
+    color: white;
+}
+
+

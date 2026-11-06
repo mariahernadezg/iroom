@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estaciones meteorológicas</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>[cite: 5]
+
+    <!-- 2. Cargar tu script de JavaScript/jQuery -->
+    <script src="tabla.js" defer></script>
+
+    <link rel="stylesheet" href="./css/iroom.css">
+
+</head>
+
+<body>
+
+    <header class="header">
+		 <h1>Estaciones meteorológicas</h1>
+	</header>
+
+    <nav class="navegacion">
+        <div class="menu">
+            <a href="index.html">Inicio</a>
+        </div>
+        <div class="menu" >
+            <a href="config.html">Configuración</a>
+        </div>
+        <div class="menu">
+           	<a href="minombre.html">Registro</a>
+        </div>
+		<div class="menu">
+           	<a href="calculadora.html">Calculadora</a>
+        </div>
+        <div class="menu">
+           	<a href="tabla.html">Tabla</a>
+        </div>
+        <aside class="menu" >
+           	<p id="mensaje">Hola: Bienvenido a Smart Room</p>
+        </aside>
+    </nav>
+
+    <main class="principal_tabla">
+        <div id="pagina1" class="pagina-tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ciudad</th><th>Temperatura(º)</th><th>Humedad(%)</th><th>Presión</th><th>Viento</th><th>Color</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alcalá de H.</td><td>25</td><td>48</td><td>150</td><td>120</td><td>000000</td>
+                    </tr>
+                    <tr>
+                        <td>Alicante</td><td>30</td><td>69</td><td>180</td><td>211</td><td>FF0000</td>
+                    </tr>
+                    <tr>
+                        <td>Badajoz</td><td>35</td><td>30</td><td>50</td><td>150</td><td>00FF00</td>
+                    </tr>
+                    <tr>
+                        <td>Burgos</td><td>18</td><td>42</td><td>211</td><td>150</td><td>0000FF</td>
+                    </tr>
+                    <tr>
+                        <td>Córdoba</td><td>35</td><td>41</td><td>150</td><td>50</td><td>FFFFFF</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="pagina2" class="pagina-tabla">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ciudad</th><th>Temperatura(º)</th><th>Humedad(%)</th><th>Presión</th><th>Viento</th><th>Color</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cracovia</td><td>25</td><td>48</td><td>150</td><td>120</td><td>005400</td>
+                    </tr>
+                    <tr>
+                        <td>Varsovia</td><td>30</td><td>69</td><td>180</td><td>211</td><td>FF0E30</td>
+                    </tr>
+                    <tr>
+                        <td>Breslavia</td><td>35</td><td>30</td><td>50</td><td>150</td><td>00FF22</td>
+                    </tr>
+                    <tr>
+                        <td>Gdansk</td><td>18</td><td>42</td><td>211</td><td>150</td><td>2500FF</td>
+                    </tr>
+                    <tr>
+                        <td>Zakopane</td><td>35</td><td>41</td><td>150</td><td>50</td><td>01FFFF</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="pagina3" class="pagina-tabla">
+            <table >
+                <thead>
+                    <tr>
+                        <th>Ciudad</th><th>Temperatura(º)</th><th>Humedad(%)</th><th>Presión</th><th>Viento</th><th>Color</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Roma</td><td>28</td><td>55</td><td>160</td><td>100</td><td>003AF00</td>
+                    </tr>
+                    <tr>
+                        <td>Milán</td><td>24</td><td>62</td><td>175</td><td>130</td><td>FF0120</td>
+                    </tr>
+                    <tr>
+                        <td>Nápoles</td><td>31</td><td>58</td><td>155</td><td>90</td><td>0AFF00</td>
+                    </tr>
+                    <tr>
+                        <td>Florencia</td><td>27</td><td>50</td><td>170</td><td>110</td><td>0DC0FF</td>
+                    </tr>
+                    <tr>
+                        <td>Venecia</td><td>23</td><td>65</td><td>180</td><td>140</td><td>FFF00F</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="pagina4" class="pagina-tabla">
+            <table>
+                <thead>
+                    <tr>
+                       <th>Ciudad</th><th>Temperatura(º)</th><th>Humedad(%)</th><th>Presión</th><th>Viento</th><th>Color</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lisboa</td><td>26</td><td>60</td><td>165</td><td>105</td><td>0FC000</td>
+                    </tr>
+                    <tr>
+                        <td>Oporto</td><td>22</td><td>70</td><td>185</td><td>135</td><td>FF0A10</td>
+                    </tr>
+                    <tr>
+                        <td>Coímbra</td><td>25</td><td>57</td><td>172</td><td>115</td><td>0BFF00</td>
+                    </tr>
+                    <tr>
+                        <td>Faro</td><td>30</td><td>52</td><td>158</td><td>95</td><td>000C5F</td>
+                    </tr>
+                    <tr>
+                        <td>Braga</td><td>21</td><td>68</td><td>190</td><td>145</td><td>F76FFF</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--Botones para el cambio de páginas-->
+        <div id="paginacion", class="paginacion">
+            <a href="#" class="boton_pag" data-target="#pagina1">Página 1</a>
+            <a href="#" class="boton_pag" data-target="#pagina2">Página 2</a>
+            <a href="#" class="boton_pag" data-target="#pagina3">Página 3</a>
+            <a href="#" class="boton_pag" data-target="#pagina4">Página 4</a>
+        </div>
+    </main>
+
+</body>
+</html>
