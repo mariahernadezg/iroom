@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pagina1>
+    <registro>
+        <ciudad>Alcalá de H.</ciudad>
+        <temperatura>25</temperatura>
+        <humedad>48</humedad>
+        <presion>150</presion>
+        <viento>120</viento>
+        <color>000000</color>
+    </registro>
+    <registro>
+        <ciudad>Alicante</ciudad>
+        <temperatura>30</temperatura>
+        <humedad>69</humedad>
+        <presion>180</presion>
+        <viento>211</viento>
+        <color>FF0000</color>
+    </registro>
+    <registro>
+        <ciudad>Badajoz</ciudad>
+        <temperatura>35</temperatura>
+        <humedad>30</humedad>
+        <presion>50</presion>
+        <viento>150</viento>
+        <color>00FF00</color>
+    </registro>
+    <registro>
+        <ciudad>Burgos</ciudad>
+        <temperatura>18</temperatura>
+        <humedad>42</humedad>
+        <presion>211</presion>
+        <viento>150</viento>
+        <color>0000FF</color>
+    </registro>
+    <registro>
+        <ciudad>Córdoba</ciudad>
+        <temperatura>35</temperatura>
+        <humedad>41</humedad>
+        <presion>150</presion>
+        <viento>50</viento>
+        <color>FFFFFF</color>
+    </registro>
+</pagina1>
