@@ -518,3 +518,60 @@ input:focus
     font-family: Georgia, serif;
     cursor: pointer;
 }
+/*--------------------------------------------P3-------------------------------------------------*/
+/*GALERIA*/
+/* GALERÍA DE IMÁGENES */
+
+.galeria {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto;
+}
+
+/* Contenedor que muestra las imágenes */
+.contenedor {
+    width: 80%;
+    overflow: hidden;
+}
+
+/* Conjunto de imágenes */
+.galeria_imagenes {
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+/* Cada imagen */
+.imagen_galeria {
+    position: relative;
+    flex: 0 0 210px;
+}
+
+/* Tamaño de las fotografías */
+.imagen_galeria img {
+    width: 210px;
+    height: 150px;
+    object-fit: cover; /*-----------------------------------------*/
+}
+
+/* Información de las imágenes */
+.imagen_galeria p {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 10px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+}
+
+/* Botones de desplazamiento */
+.galeria_btn {
+    padding: 10px;
+    cursor: pointer;
+}

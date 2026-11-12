@@ -3,15 +3,13 @@
 	<head> <meta charset="utf-8">
 		<title>Galería</title>
 		<link rel="stylesheet" type="text/css" href="./css/iroom.css">
-        <!--<script src="calculadora.js" defer></script>-->
+		<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script src="galeria.js" defer></script>
     </head>
 	<body>
 
 	  <!-- Encabezado -->
-	  <header class="header">
-		 <h1>Galería de imágenes</h1>
-	  </header>
-	  
+		<h1 class="header">Galería de estaciones meteorológicas</h1>
 	  
         <!-- Navegación-->
        <nav class="navegacion">
@@ -40,11 +38,30 @@
         
 	  <!-- Contenido principal de esta página-->
 	  <main>
-        <h2>Galería de imágenes</h2>
-		<div class = "calculadora">
-            <img src="./img/cracovia.jfif" alt="Escuela Politécnica Superior" class="imagen" >
-        </div>
-		
+		<div class = "galeria">
+			<button id = "anterior" class="galeria_btn"><</button>
+			<div class ="contenedor">
+				<div class="galeria_imagenes">
+					<div class = "imagen_galeria">
+						<img src="./img/madrid.jfif" alt="Madrid">
+						<p>Madrid</p>
+					</div>
+					<div class = "imagen_galeria">
+						<img src="./img/cracovia.jfif" alt="Cracovia">
+						<p>Crarcovia</p>
+					</div>
+					<div class = "imagen_galeria">
+						<img src="./img/roma.jfif" alt="Roma">
+						<p>Roma</p>
+					</div>
+					<div class = "imagen_galeria">
+						<img src="./img/lisboa.jfif" alt="Lisboa">
+						<p>Lisboa</p>
+					</div>
+				</div>
+			</div>
+			<button id = "siguiente" class="galeria_btn">></button>
+		</div>
 	  </main>
 
 	  <!--Pie de página -->
