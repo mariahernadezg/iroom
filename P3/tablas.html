@@ -116,6 +116,16 @@
             <a id = pag4 href="#" class="boton_pag" data-target="#pagina4">Página 4</a>
         </div>
     </main>
+<!--Necesario para el registro, es decir para "minombre.html"-->
+	<script>
+		var nombre = localStorage.getItem("fname");
 
+		if (nombre) 
+		{
+			document.getElementById("mensaje").innerHTML =
+				"Hola " + nombre + ": Bienvenido/a a Smart Room.";
+		}
+
+	</script>  
 </body>
 </html>
