@@ -1,33 +1,48 @@
 
 function formatearTabla($tabla) {
-   $tabla.css({
-        'border-collapse': 'collapse',
-        'width': '90%',
-        'table-layout': 'fixed',
-        'margin': '20px auto',
-        'height': 'auto',
-        'background-color': 'white',
-        'box-shadow': '0px 3px 8px rgba(15,118,110,0.20)'
-    });
-    $tabla.find('th').css({
-        'background-color': '#0F766E',
-        'color': 'white',
-        'padding': '15px',
-        'text-align': 'center',
-        'border': '1px solid #99F6E4',
-        'font-size': '18px'
-    });
+    //Fila historiograna
+  if ($tabla.find('.fila-historiograma').length === 0) {
+    const filaCheckboxes = `
+      <tr class="fila-historiograma">
+      <td>Mostrar histograma</td>
+      <td><input type="checkbox" class="check" data-target="#temp"></td>
+      <td><input type="checkbox" class="check" data-target="#hum"></td>
+      <td><input type="checkbox" class="check" data-target="#pres"></td>
+      <td><input type="checkbox" class="check" data-target="#viento"></td>
+      <td>-</td>
+      </tr>
+      `;
+    $tabla.find('tbody').prepend(filaCheckboxes);
+    }
+  $tabla.css({
+    'border-collapse': 'collapse',
+    'width': '90%',
+    'table-layout': 'fixed',
+    'margin': '20px auto',
+    'height': 'auto',
+    'background-color': 'white',
+    'box-shadow': '0px 3px 8px rgba(15,118,110,0.20)'
+  });
 
-    $tabla.find('td').css({
-        'padding': '12px',
-        'text-align': 'center',
-        'border': '1px solid #99F6E4',
-        'background-color': '#FFFFFF',
-        'color': '#164E63',
-        'font-size': '16px'
-    });
+  $tabla.find('th').css({
+    'background-color': '#0F766E',
+    'color': 'white',
+    'padding': '15px',
+    'text-align': 'center',
+    'border': '1px solid #99F6E4',
+    'font-size': '18px'
+  });
 
-   
+  $tabla.find('td').css({
+    'padding': '12px',
+    'text-align': 'center',
+    'border': '1px solid #99F6E4',
+    'background-color': '#FFFFFF',
+    'color': '#164E63',
+    'font-size': '16px'
+  });
+
+    
 }
 
 
@@ -44,6 +59,10 @@ $(document).ready(function() {
 
     // Ocultamos todas las páginas
     $('.pagina-tabla').hide();
+    //Ocultamos el histograma al cambiar de página
+    $('#seccion-histograma').hide();
+    //Desmarcamos cualquier checkbox que se hubiera quedado marcado
+    $('.check').prop('checked', false);
     if (objetivo == '#pagina1')
     {
       loadXml();
@@ -59,7 +78,19 @@ $(document).ready(function() {
       }
     $(objetivo).show(); //Mostrar página seleccionada
   });
+  $('#seccion-histograma').hide();//Por defecto historiograma oculto 
 });
+
+//Historiograma
+$(document).on('click', '.check', function(){
+    if ($(this).is(':checked')) {
+      $('.pagina-tabla:visible .check').not(this).prop('checked', false); //Solo se marca una casilla a la vez
+      var casilla = $(this).data('target'); 
+      historiograma(casilla);
+    } else {
+      $('#seccion-histograma').hide(); //Si se desmarca la casilla ocultamos el historiograma 
+    }
+  });
 
 //Envío de datos XML
 function loadXml() {
@@ -122,4 +153,45 @@ function tabla_json(json)
     }
     contenido += "</tbody>";
     return contenido
+}
+
+//Visualización historiograma
+const titulos = {
+      "#temp": "Temperatura (º)",
+      "#hum": "Humedad (%)",
+      "#pres": "Presión",
+      "#viento": "Viento"
+  };
+
+const columnas = { "#temp": 1, "#hum": 2, "#pres": 3, "#viento": 4 };
+function historiograma(casilla)
+{
+  let filas = $('.pagina-tabla:visible tbody tr'); //Realizamos el historiograma con los datos de la tabla seleccionada
+  let contenidoHistograma = "";
+  let indice= columnas[casilla];
+  for (let i=1; i<filas.length; i++)
+  {
+    let ciudad = filas[i].cells[0].innerText; //Seleccionamos el contenido de la columna ciudad
+    let valor = filas[i].cells[indice].innerText; //Estraemos el valor de la columna seleccionada
+
+    contenidoHistograma += "<tr>";
+    contenidoHistograma += "<td>" + ciudad + "</td>";
+    contenidoHistograma += "<td class='contendor-barras'>" + crearBarra(valor, indice) + "</td>";
+    contenidoHistograma += "</tr>";
+  }
+  $('#titulo-histograma').text(titulos[casilla]);
+  $('#cuerpo-histograma').html(contenidoHistograma);
+  $('#seccion-histograma').show();
+}
+
+function crearBarra(valor, param)
+{
+  if (param == 2) //La humedad ya se expresa en porcentaje
+  {
+
+  }
+  else //Para las otras variables hay que convertir a porcentaje 
+  {
+
+  }
 }

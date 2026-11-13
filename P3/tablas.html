@@ -115,6 +115,23 @@
             <a id = pag3 href="#" class="boton_pag" data-target="#pagina3">Página 3</a>
             <a id = pag4 href="#" class="boton_pag" data-target="#pagina4">Página 4</a>
         </div>
+        <!-- Contenedor principal del histograma -->
+        <section id="seccion-histograma" class = "seccion-historiograma" style="display: block; width: 90%; margin: 40px auto;">
+            <h3 id="titulo-histograma" style="text-align: center; color: #0F766E;">Seleccione un parámetro para ver el histograma</h3>
+            
+            <div id="histograma" class="contenedor-histograma">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tbody id="cuerpo-histograma">
+                        <tr>
+                            <td class = "ciudad-datos">Ciudad Base</td>
+                            <td class = "contendor-barras">
+                                <div class = "barra"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 <!--Necesario para el registro, es decir para "minombre.html"-->
 	<script>
