@@ -38,7 +38,7 @@ $(document).ready(function() {
   $('#pagina3').show();
   $('#pagina1, #pagina2, #pagina4').hide();
   // Se activa cuando se hace click sobre los botones
-  $('.boton-pag').click(function(e) {
+  $('.boton_pag').click(function(e) {
     e.preventDefault(); // Para que los botones no se comporten como un enlace por defecto
     var objetivo = $(this).data('target'); //Cuando se hace click se ve el valor del botón
 
@@ -98,7 +98,7 @@ function tabla_xml(xml) {
 
 //Envío de datos JSON
 function loadJson() {
-    $.get("pagina2.json", function(datos) {
+    $.getJSON("pagina2.json", function(datos) {
         let contenido = tabla_json(datos);
         const $tablaPag2 = $('#pagina2 table');
         $tablaPag2.html(contenido);

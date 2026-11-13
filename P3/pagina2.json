@@ -1,10 +1,8 @@
-
 {
-    "ciudad" : ["Cracovia", "Varsovia", "Breslavia", "Gdansk", "Zakopane"],
-    "temperatura" : ["25", "30", "35", "18", "35"],
-    "humedad" : ["48", "69", "30", "42", "41"],
-    "presion" : ["150", "180", "50", "211", "150"],
-    "viento" : ["120", "211",  "150", "150", "50"],
-    "color" : ["005400", "2FF0E3011",  "00FF22", "2500FF", "01FFFF"]
-
+  "ciudad": ["Cracovia", "Varsovia", "Breslavia", "Gdansk", "Zakopane"],
+  "temperatura": ["25", "30", "35", "18", "35"],
+  "humedad": ["48", "69", "30", "42", "41"],
+  "presion": ["150", "180", "50", "211", "150"],
+  "viento": ["120", "211", "150", "150", "50"],
+  "color": ["005400", "2FF0E3011", "00FF22", "2500FF", "01FFFF"]
 }
