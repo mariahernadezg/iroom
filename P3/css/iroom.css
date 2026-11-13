@@ -625,5 +625,36 @@ input:focus
     color: white;
 }
 
+/*CSS ARCHIVO tablas.js*/
+.contenedor-histograma {
+    border: 1px solid #99F6E4;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 3px 8px rgba(15,118,110,0.20);
+}
+
+.fila-barra {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.ciudad-etiqueta {
+    width: 150px; /* Ancho fijo para que todas las barras empiecen en el mismo punto */
+    font-weight: bold;
+    color: #164E63;
+}
+
+.barra-datos {
+    background-color: #84CC16; /* Color de la barra, puedes cambiarlo */
+    height: 30px;
+    line-height: 30px; /* Centra el texto verticalmente */
+    color: white;
+    text-align: right;
+    padding-right: 10px;
+    border-radius: 3px;
+    /* La transición hace que la barra crezca de forma animada */
+    transition: width 0.8s ease-in-out; 
+}
 
 
