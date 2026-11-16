@@ -270,7 +270,7 @@ function crearBarra(valor, indice)
         <div class="barra-externa">
             <div class="barra-interna" style="background-color: #0F766E; width: ${porcentaje}%; height: 100%;"></div>
         </div>
-        </div>
+        
     `;
 
 }
