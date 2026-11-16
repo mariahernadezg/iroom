@@ -47,7 +47,7 @@ function formatearTabla($tabla) {
 
 
 $(document).ready(function() {
-
+  loadUmbralesXml(); //Mejora. Cargamos los umbrales al iniciar la pagina
   // Por defecto se muestra la tabla3
   formatearTabla($('#pagina3 table'));
   $('#pagina3').show();
@@ -231,11 +231,11 @@ function historiograma(casilla)
     
 }
 
-function calcBarra(valor, param)
+function calcBarra(valor, indice)
 {
   let min, max, res;
   let num = parseFloat(valor)
-  switch(param)
+  switch(indice)
     {
       case 1:
         min = -10;
@@ -266,11 +266,46 @@ function crearBarra(valor, indice)
 
   let porcentaje
   porcentaje = calcBarra(valor, indice)
+  let redondeo = Math.round(porcentaje);
+  let estadoXml = umbrales(valor, indice); //Nos devuelve el estado de la variable del hist
   return `
-        <div class="barra-externa">
-            <div class="barra-interna" style="background-color: #0F766E; width: ${porcentaje}%; height: 100%;"></div>
+        <div class="barra-externa" title="${estadoXml} (${redondeo}%)">
+            <div class="barra-interna" style="background-color: #0F766E; width: ${redondeo}%; height: 100%;"></div>
         </div>
         
     `;
 
+}
+
+//MEJORA
+let xmlUmbrales = null
+//Envío xml para los umbrales
+function loadUmbralesXml() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    xmlUmbrales = this.responseXML; 
+  }
+  xhttp.open("GET", "umbrales.xml"); 
+  xhttp.send();
+}
+
+function umbrales(valor, indice)
+{
+  if (!xmlUmbrales) return "Normal"; //Si el xml no se ha cargado
+  const etiquetas = ["", "temperatura", "humedad", "presion", "viento"]; //Temperatura es el 1
+  let variable = xmlUmbrales.getElementsByTagName(etiquetas[indice])[0];
+  if (!variable) return "Normal";
+
+  let num = parseFloat(valor);
+  let categorias = variable.children;
+
+  for(let i =0; i<categorias.length; i++)
+  {
+    if (categorias[i].nodeType !== 1) 
+      continue;
+    let min = parseFloat(categorias[i].getAttribute("min"));
+    let max = parseFloat(categorias[i].getAttribute("max"));
+    if (num >= min && num < max) 
+      return categorias[i].textContent; //Miramos en cual de los tres umbrales entra
+  }
 }
