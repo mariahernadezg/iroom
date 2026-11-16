@@ -21,7 +21,7 @@ function formatearTabla($tabla) {
     'margin': '20px auto',
     'height': 'auto',
     'background-color': 'white',
-    'box-shadow': '0px 3px 8px rgba(15,118,110,0.20)'
+    'box-shadow': '0px 3px 8px rgba(15,118,110,0.20)',
   });
 
   $tabla.find('th').css({
@@ -175,23 +175,102 @@ function historiograma(casilla)
     let valor = filas[i].cells[indice].innerText; //Estraemos el valor de la columna seleccionada
 
     contenidoHistograma += "<tr>";
-    contenidoHistograma += "<td>" + ciudad + "</td>";
-    contenidoHistograma += "<td class='contendor-barras'>" + crearBarra(valor, indice) + "</td>";
+    contenidoHistograma += "<td class='celda-ciudad'>" + ciudad + "</td>";
+    contenidoHistograma += "<td class='celda-barra'>" + crearBarra(valor, indice) + "</td>";
     contenidoHistograma += "</tr>";
   }
   $('#titulo-histograma').text(titulos[casilla]);
   $('#cuerpo-histograma').html(contenidoHistograma);
+
+ $('#seccion-histograma').css({
+        'width': '90%',
+        'margin': '20px auto',
+        'padding': '20px',
+        'background-color': 'white',
+        'box-shadow': '0px 3px 8px rgba(15,118,110,0.20)',
+        'border': '1px solid #99F6E4',
+        
+    });
+
+    // Estilo para el título del histograma (coincidiendo con los th de tus tablas)
+    $('#titulo-histograma').css({
+        'color': '#0F766E',
+        'padding': '15px',
+        'text-align': 'center',
+        'font-size': '20px',
+        
+    });
+
+    $('.celda-ciudad').css({
+        'padding': '12px',
+        'text-align': 'center',    
+        'font-weight': 'bold',
+        'color': '#164E63',
+        'font-size': '16px',
+        'width': '35%',
+        'border': 'none'    //Sin bordes interiores
+    });
+
+    $('.celda-barra').css({
+        'padding': '12px',
+        'text-align': 'left',      
+        'width': '65%',
+        'border': 'none'
+    });
+
+    $('.barra-externa').css({
+        'background-color': '#f1efef',
+        'width': '400px',
+        'height': '22px',
+        'display': 'inline-block',
+        'border-radius': '4px',
+        'margin': '0 10px'
+    });
   $('#seccion-histograma').show();
+
+    
 }
 
-function crearBarra(valor, param)
+function calcBarra(valor, param)
 {
-  if (param == 2) //La humedad ya se expresa en porcentaje
-  {
+  let min, max, res;
+  let num = parseFloat(valor)
+  switch(param)
+    {
+      case 1:
+        min = -10;
+        max = 50;
+        res = (num - min)/(max-min);
+        res = res * 100;
+        return res
+      
+      case 2:
+        return num
 
-  }
-  else //Para las otras variables hay que convertir a porcentaje 
-  {
+      case 3:
+      case 4:
+        min = 0;
+        max = 250;
+        res = (num - min)/(max-min);
+        res = res * 100;
+        return res;
 
-  }
+      default:
+        return 0;
+
+    }
+}
+
+function crearBarra(valor, indice)
+{
+
+  let porcentaje
+  porcentaje = calcBarra(valor, indice)
+  return `
+        <div class="barra-externa">
+            <div class="barra-interna" style="background-color: #0F766E; width: ${porcentaje}%; height: 100%;"></div>
+        </div>
+        </div>
+    `;
+
 }
