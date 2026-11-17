@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estaciones meteorológicas</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>[cite: 5]
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <!-- 2. Cargar tu script de JavaScript/jQuery -->
+    
     <script src="tablas.js" defer></script>
 
     <link rel="stylesheet" href="./css/iroom.css">
+
 
 </head>
 
@@ -33,6 +34,9 @@
            	<a href="calculadora.html">Calculadora</a>
         </div>
         <div class="menu">
+           	<a href="galeria.html">Galeria</a>
+        </div>
+        <div class="menu">
            	<a href="tablas.html">Tabla</a>
         </div>
         <aside class="menu" >
@@ -48,28 +52,7 @@
         </div>
         <div id="pagina2" class="pagina-tabla">
             <table>
-                <thead>
-                    <tr>
-                        <th>Ciudad</th><th>Temperatura(º)</th><th>Humedad(%)</th><th>Presión</th><th>Viento</th><th>Color</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Cracovia</td><td>25</td><td>48</td><td>150</td><td>120</td><td>005400</td>
-                    </tr>
-                    <tr>
-                        <td>Varsovia</td><td>30</td><td>69</td><td>180</td><td>211</td><td>FF0E30</td>
-                    </tr>
-                    <tr>
-                        <td>Breslavia</td><td>35</td><td>30</td><td>50</td><td>150</td><td>00FF22</td>
-                    </tr>
-                    <tr>
-                        <td>Gdansk</td><td>18</td><td>42</td><td>211</td><td>150</td><td>2500FF</td>
-                    </tr>
-                    <tr>
-                        <td>Zakopane</td><td>35</td><td>41</td><td>150</td><td>50</td><td>01FFFF</td>
-                    </tr>
-                </tbody>
+                
             </table>
         </div>
 
@@ -132,7 +115,26 @@
             <a id = pag3 href="#" class="boton_pag" data-target="#pagina3">Página 3</a>
             <a id = pag4 href="#" class="boton_pag" data-target="#pagina4">Página 4</a>
         </div>
+        <!-- Contenedor principal del histograma -->
+        <div id="seccion-histograma" style="display: none; text-align: center;">
+        <h3 id="titulo-histograma">Histograma</h3>
+        <table style="margin: 0 auto; width: 80%; border-collapse: collapse;">
+            <tbody id="cuerpo-histograma">
+                <!-- Aquí se inyectan las filas del histograma -->
+            </tbody>
+        </table>
+    </div>
     </main>
+<!--Necesario para el registro, es decir para "minombre.html"-->
+	<script>
+		var nombre = localStorage.getItem("fname");
 
+		if (nombre) 
+		{
+			document.getElementById("mensaje").innerHTML =
+				"Hola " + nombre + ": Bienvenido/a a Smart Room.";
+		}
+
+	</script>  
 </body>
 </html>

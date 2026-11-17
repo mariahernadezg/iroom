@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rango>
+    <temperatura>
+        <bajo max="10" min="-Infinity">Frío</bajo>
+        <promedio min="10" max="30">Promedio</promedio>
+        <elevado min="30" max="Infinity">Caluroso</elevado>
+    </temperatura>
+    <humedad>
+        <bajo max="30" min="-Infinity">Seco</bajo>
+        <promedio min="30" max="70">Normal</promedio>
+        <elevado min="70" max="Infinity">Húmedo</elevado>
+    </humedad>
+    <presion>
+        <bajo max="80" min="-Infinity">Baja</bajo>
+        <promedio min="80" max="170">Normal</promedio>
+        <elevado min="170" max="Infinity">Alta</elevado>
+    </presion>
+    <viento>
+        <bajo max="80" min="-Infinity">Suave</bajo>
+        <promedio min="80" max="170">Moderado</promedio>
+        <elevado min="170" max="Infinity">Intenso</elevado>
+    </viento>
+</rango>
