@@ -62,7 +62,8 @@ input:focus
 }
 .menu
 {
-    width: 25%;
+    flex: 1;
+    min-width: 0;
     height: auto;
     background-color: white;
     color: #164E63;
@@ -71,6 +72,18 @@ input:focus
     line-height: 60px;
     font-size: 20px;
     border-radius: 10px; /*redondeamos los bordes de navegacion*/
+}
+
+/*Mensaje de bienvenida*/
+.navegacion aside.menu
+{
+    flex: 2;        /*Dispone del doble de espacio que cada botón*/
+    font-size: 16px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 }
 
 .contenido_principal
@@ -176,7 +189,7 @@ input:focus
     font-size: 20px;
     padding-left: 20px;
 }
-.datos input
+.datos input, .datos select
 {
     width: 50%;
     padding: 8px;
@@ -331,10 +344,15 @@ input:focus
 
     .menu
     {
-        width: 45%;
-        margin: 5px auto;
+        flex: 1 1 40%;
+        line-height: 45px
     }
-    .plano
+    .navegacion aside.menu
+    {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+        .plano
     {
         height: 350px;
     }
@@ -527,18 +545,19 @@ input:focus
 .galeria {
     display: flex;
     align-items: center;
-    width: 80%;
+    justify-content: safe center; /* Centrar imágenes si caben */
+    width: 90%;
     gap: 10px;
-    margin: 30px;
-    padding: 20px;
+    margin: 30px 10px;
+    padding: 45px 25px;
     overflow: hidden;
 }
 
 .galeria img{
-    width: 300px;
-    height: 230px;
-    object-fit: cover;   /*ajusta las imágenes sin deformarla*/
-    border-radius: 5px;
+    width: 380px;
+    height: 280px;
+    object-fit: cover; /*ajusta las imágenes sin deformarlas*/
+    border-radius: 10px;
 }
 
 /* Contenedor que muestra las imágenes */
@@ -548,7 +567,8 @@ input:focus
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: auto;
+    min-height: 450px;
+    padding: 20px;
 }
 
 /* Botones de desplazamiento */
@@ -557,6 +577,9 @@ input:focus
     padding: 10px;
     cursor: pointer;
     font-size: 20px;
+}
+.galeria_btn:hover {
+    background-color: #14B8A6;
 }
 
 /*cls para la ampliación de las fotografías*/
@@ -592,9 +615,24 @@ input:focus
     display: block;
 }
 
+/*Mejora 1.4: filtro de fotografías según país*/
+.filtro_galeria {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+    color: #164E63;
+}
 
+.filtro_galeria select {
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #0F766E;
+    border-radius: 5px;
+    background-color: white;
+    color: #164E63;
+}
 
-/*documento tabla.js*/
+/*DOCUMENTO tabla.js*/
 
 /* CONTENEDOR DE LA TABLA */
 .principal_tabla

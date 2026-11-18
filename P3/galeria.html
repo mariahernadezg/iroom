@@ -38,6 +38,21 @@
         
 	  <!-- Contenido principal de esta página-->
 	  <main>
+			<!--Mejora 1.4-->
+			<!-- MEJORA 1.4: Filtrar las imágenes por país -->
+			<div class="filtro_galeria">
+				<label for="pais_galería">Filtrar imágenes por país:</label>
+
+				<select id="pais_galeria">
+					<option value="todos">Todos los países</option>
+					<option value="España">España</option>
+					<option value="Italia">Italia</option>
+					<option value="Polonia">Polonia</option>
+					<option value="Portugal">Portugal</option>
+				</select>
+			</div>
+
+			<!--Galería de imágenes-->
             <div class = "contenedor_gal">
                 <button id = "izquierda" class="galeria_btn"><</button>
                 <div id= "galeria" class ="galeria"></div>

@@ -3,7 +3,7 @@ const formulario = document.getElementById("formulario"); //porque se envían to
 const pais = document.getElementById("pais");
 function val_pais(pais)
 {
-    const paises = ["España", "Italia", "Polonia", "Portugal", "China"]; //Comprobación de si el país está en la lista
+    const paises = ["España", "Italia", "Polonia", "Portugal"]; //Comprobación de si el país está en la lista
     for(let i=0; i< paises.length; i++)
     {
         pais = pais.trim().toLowerCase();
@@ -195,4 +195,38 @@ cerrarMod.addEventListener("click", function()
 });
 
 
+
+//Selección de países y carga de ciudades
+//Detectamos el cambio de país para ofrecer la lista de ciudades
+$("#pais").change(function()
+{
+    //Obtener el valor del país seleccionado
+    let pais_sel = $(this).val();
+    let archivos = 
+    {
+        "España": "España.txt",
+        "Italia": "Italia.txt",
+        "Polonia": "Polonia.txt",
+        "Portugal": "Portugal.txt"
+    };
+    //Eliminamos los elementos de ciudades y añadimos una opción inicial para indicar que se debe seleccionar una ciudad
+    $("#ciudad").empty();
+    $("#ciudad").append('<option value="" disabled selected hidden>Seleccione una ciudad</option>');
+
+    //Solicitamos el archivo con las ciudades con AJAX construyendo la ruta del archivo
+    $.get("ciudades/" + archivos[pais_sel], function(datos) 
+    {
+       
+        // Separar las ciudades por líneas
+        let ciudades = datos.trim().split(/\r?\n/);
+
+        // Añadir las ciudades a la selección
+        for (let i = 0; i < ciudades.length; i++) 
+        {
+            $("#ciudad").append(
+                $("<option>").val(ciudades[i].trim()).text(ciudades[i].trim())
+            );
+        }
+    });
+});
 

@@ -3,6 +3,7 @@
 	<head> <meta charset="utf-8">
 		<title>Configuración</title>
 		<link rel="stylesheet" type="text/css" href="./css/iroom.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
         <script src="formulario.js" defer></script>
 
 
@@ -77,20 +78,22 @@
 	  <form id= "formulario" action="" method="get">
 	  <div class="contenido_principal">
 		<div class = "datos">
+            <!--Selección del País-->
             <div>
                 <label for="pais">País:</label>
-                <input list="paises" name="pais" id="pais">
-                <datalist id="paises">
-                    <option value="España">
-                    <option value="Italia">
-                    <option value="Polonia">
-                    <option value="Portugal">
-                    <option value="China">
-                </datalist>  
+                <select name="pais" id="pais">
+                    <option value="" disabled selected hidden> Seleccione un país</option>
+                    <option value="España">España</option>
+                    <option value="Italia">Italia</option>
+                    <option value="Polonia">Polonia</option>
+                    <option value="Portugal">Portugal</option>
+                </select> 
             </div>
             <div>
                 <label for="ciudad">Ciudad:</label>
-                <input id="ciudad" name="ciudad" type="text" placeholder = "Alcalá de Henares">  
+                <select name="ciudad" id="ciudad">
+                    <option value="" disabled selected hidden>Debe seleccionar primero un país</option>
+                </select>
             </div>
             <div>
                 <label for="localizacion">Coordenadas GPS:</label>
